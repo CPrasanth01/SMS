@@ -1,7 +1,11 @@
 import { Component } from 'react'
 import { Nav } from 'react-bootstrap'
+import { Event } from '../../pages/index/event/event'
+import { Home } from '../../pages/index/home/home'
+import { Tool } from '../../pages/index/tools/tool'
+import { Manage } from '../../pages/index/manage/manage'
 
-const tabs = ['Home', 'Track', 'Tool', 'Manage']
+const tabs = ['Home', 'Event', 'Tool', 'Manage']
 
 class Tab extends Component {
   constructor (props) {
@@ -28,12 +32,13 @@ class Tab extends Component {
     })
 
     return (
-
-      <Nav justify variant="tabs" activeKey={this.state.activeTab} defaultActiveKey='Home'>
-        {tabs}
-        <p>{this.state.activeTab}</p>
-        <this.state.activeTab/>
-      </Nav>
+      <div>
+        <Nav justify variant="tabs" activeKey={this.state.activeTab} defaultActiveKey='Home'>
+          {tabs}
+          <p>{this.state.activeTab}</p>
+        </Nav>
+        <this.state.activeTab />
+      </div>
     )
   }
 }
